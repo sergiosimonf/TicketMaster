@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="PSPUT3Tiqueto:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PSPUT3Tiqueto_jar</output-path>
+    <root id="archive" name="PSPUT3Tiqueto.jar">
+      <element id="module-output" name="PSPUT3Tiqueto" />
+    </root>
+  </artifact>
+</component>
