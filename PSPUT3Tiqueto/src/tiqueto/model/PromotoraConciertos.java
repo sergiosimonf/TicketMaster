@@ -22,7 +22,6 @@ public class PromotoraConciertos extends Thread {
 		int entradasVendidas = 0;
 
 		while (webCompra.entradasRestantes() != 0 && !webCompra.hayEntradas()) {
-
 			if (!webCompra.hayEntradas()){
 				mensajePromotor("Vaya... se han acabado las entradas, tendré que reponerlas");
 				webCompra.reponerEntradas(EjemploTicketMaster.REPOSICION_ENTRADAS);
@@ -30,7 +29,7 @@ public class PromotoraConciertos extends Thread {
 				entradasVendidas += EjemploTicketMaster.REPOSICION_ENTRADAS;
 
 				try {
-					Thread.sleep(ThreadLocalRandom.current().nextInt(3000, 8000));
+						Thread.sleep(ThreadLocalRandom.current().nextInt(3000, 8000));
 				} catch (InterruptedException e) {
 					Thread.currentThread().interrupt();
 					System.out.println("Thread interrupted: " +e);

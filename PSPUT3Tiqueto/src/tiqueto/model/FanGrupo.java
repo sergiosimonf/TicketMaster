@@ -28,7 +28,7 @@ public class FanGrupo extends Thread {
 				mensajeFan("Voy a intentar comprar una entrada... ¡Espero que no me la quiten!");
 				if (webCompra.comprarEntrada()){
 					entradasCompradas++;
-					mensajeFan("¡He conseguido comprar: " + entradasCompradas + " que bien!");
+					dimeEntradasCompradas();
 					try {
 						Thread.sleep(ThreadLocalRandom.current().nextInt(1000, 3000));
 					} catch (InterruptedException e) {
@@ -38,7 +38,7 @@ public class FanGrupo extends Thread {
 				}
 			}
 		}
-		mensajeFan("¡Como que la venta se ha cerrado solo he podido conseguir " + entradasCompradas + " !");
+		mensajeFan("La compra se ha cerrado...");
 	}
 	
 	public void dimeEntradasCompradas() {

@@ -22,7 +22,7 @@ public class WebCompraConciertos implements IOperacionesWeb{
 		if (hayEntradas()) {
 			entradasVendidas++;
 			entradasDisponibles--;
-            mensajeWeb("Entrada comprada: " + entradasRestantes() + " entradas.");
+            mensajeWeb("Entrada comprada: " + entradasRestantes() + " quedan entradas restantes.");
 			return true;
 		}else {
 			try {
@@ -53,6 +53,7 @@ public class WebCompraConciertos implements IOperacionesWeb{
 	@Override
 	public synchronized void cerrarVenta() {
 		this.isVentaCerrada = true;
+		notifyAll();
 	}
 
 	/**

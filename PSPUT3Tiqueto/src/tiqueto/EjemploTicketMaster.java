@@ -43,9 +43,9 @@ public class EjemploTicketMaster {
 		//Esperamos a que el promotor termine, para preguntar a los fans cuántas entradas tienen compradas
 		liveNacion.join();
 
-		System.out.println("\n [ Terminada la fase de venta - Sondeamos a pie de calle a los compradores ] \n");
-		System.out.println("Total entradas ofertadas: " + TOTAL_ENTRADAS);
-		System.out.println("Total entradas disponibles en la web: " + webCompra.entradasRestantes());
+		System.out.println("\n[ Terminada la fase de venta - Sondeamos a pie de calle a los compradores ] \n");
+		System.out.println("\nTotal entradas ofertadas: " + TOTAL_ENTRADAS);
+		System.out.println("Total entradas disponibles en la web: " + webCompra.entradasRestantes() + "\n");
 
 		// Les preguntamos a cada uno
 		for (FanGrupo fan : fans) {
