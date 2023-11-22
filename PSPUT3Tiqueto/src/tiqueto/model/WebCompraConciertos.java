@@ -10,7 +10,7 @@ public class WebCompraConciertos implements IOperacionesWeb{
 		super();
 	}
 	private int entradasVendidas = 0;
-	private int entradasDisponibles = 0;
+	public int entradasDisponibles = 0;
 	public boolean isVentaCerrada = false;
 
 	/**
@@ -44,7 +44,13 @@ public class WebCompraConciertos implements IOperacionesWeb{
 	@Override
 	public synchronized int reponerEntradas(int numeroEntradas) {
 		notifyAll();
-		return this.entradasDisponibles += numeroEntradas;
+//		return this.entradasDisponibles += numeroEntradas;
+
+		if (entradasVendidas + entradasDisponibles + numeroEntradas > EjemploTicketMaster.TOTAL_ENTRADAS ){
+			return entradasDisponibles += EjemploTicketMaster.TOTAL_ENTRADAS - (entradasDisponibles + entradasVendidas);
+		}else {
+			return this.entradasDisponibles += numeroEntradas;
+		}
 	}
 
 	/**
