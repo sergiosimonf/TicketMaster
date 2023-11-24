@@ -72,12 +72,13 @@ public class WebCompraConciertos implements IOperacionesWeb{
 
 
 	/**
-	 * Método para conocer las entradas restantes que se pueden vender
+	 * Método para conocer las entradas disponibles para vender
 	 * @return Número de entradas restantes
 	 */
 	@Override
 	public synchronized int entradasRestantes() {
-        return EjemploTicketMaster.TOTAL_ENTRADAS - entradasVendidas - entradasDisponibles;
+//        return EjemploTicketMaster.TOTAL_ENTRADAS - entradasVendidas - entradasDisponibles;
+		return entradasDisponibles;
 	}
 
 

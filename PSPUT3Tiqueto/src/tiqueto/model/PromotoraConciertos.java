@@ -8,6 +8,8 @@ public class PromotoraConciertos extends Thread {
 
 	final WebCompraConciertos webCompra;
 
+	private int entradasRepuestas = 0;
+
 	public PromotoraConciertos(WebCompraConciertos webCompra) {
 		super();
 		this.webCompra = webCompra;
@@ -19,10 +21,10 @@ public class PromotoraConciertos extends Thread {
 	 */
 	@Override
 	public void run() {
-		while (webCompra.entradasRestantes() != 0 && !webCompra.hayEntradas()) {
+		while (entradasRepuestas != EjemploTicketMaster.TOTAL_ENTRADAS && !webCompra.hayEntradas()) {
 			if (!webCompra.hayEntradas()){
 				mensajePromotor("Vaya... se han acabado las entradas, tendré que reponerlas");
-				webCompra.reponerEntradas(EjemploTicketMaster.REPOSICION_ENTRADAS);
+				entradasRepuestas += webCompra.reponerEntradas(EjemploTicketMaster.REPOSICION_ENTRADAS);
 				try {
 					Thread.sleep(ThreadLocalRandom.current().nextInt(3000, 8000));
 				} catch (InterruptedException e) {
