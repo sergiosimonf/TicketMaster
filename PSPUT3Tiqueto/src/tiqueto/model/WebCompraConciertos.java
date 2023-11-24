@@ -77,7 +77,7 @@ public class WebCompraConciertos implements IOperacionesWeb{
 	 */
 	@Override
 	public synchronized int entradasRestantes() {
-        return EjemploTicketMaster.TOTAL_ENTRADAS - entradasVendidas;
+        return EjemploTicketMaster.TOTAL_ENTRADAS - entradasVendidas - entradasDisponibles;
 	}
 
 
